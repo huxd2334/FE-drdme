@@ -1,0 +1,72 @@
+.inputContainer {
+  position: relative;
+}
+
+/* Floating label animation */
+.inputContainer.floating label {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  padding: 0 4px;
+  color: #6b7280;
+  pointer-events: none;
+  transition: all 0.2s ease-in-out;
+  z-index: 1;
+}
+
+.inputContainer.floating input:focus + label,
+.inputContainer.floating input:not(:placeholder-shown) + label {
+  top: 0;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #3b82f6;
+}
+
+.inputContainer.floating input.error:focus + label,
+.inputContainer.floating input.error:not(:placeholder-shown) + label {
+  color: #ef4444;
+}
+
+/* Error message animation */
+.errorMessage {
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom focus styles */
+.inputContainer input:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.inputContainer input.error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* Autofill styles */
+.inputContainer input:-webkit-autofill,
+.inputContainer input:-webkit-autofill:hover,
+.inputContainer input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Placeholder animation */
+.inputContainer input::placeholder {
+  transition: opacity 0.2s ease-in-out;
+}
+
+.inputContainer input:focus::placeholder {
+  opacity: 0.5;
+}

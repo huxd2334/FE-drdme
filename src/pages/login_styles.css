@@ -1,0 +1,85 @@
+.login-container {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f7fa;
+}
+
+/* Left side */
+.login-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  padding: 2rem;
+}
+
+.login-illustration {
+  max-width: 280px;
+  margin-bottom: 1rem;
+}
+
+.login-campaign {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1565c0;
+  text-align: center;
+}
+
+/* Right side */
+.login-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.login-box {
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  max-width: 420px;
+  width: 100%;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+
+
+.login-logo {
+  height: 60px;
+  margin-bottom: 1rem;
+}
+
+.system-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: left;
+}
+
+/* Footer */
+.login-footer {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #616161;
+}
+
+.login-footer span {
+  display: block;
+  text-align: left;
+  margin-bottom: 0.5rem;
+  color: black;
+  cursor: pointer;
+}
+
+.login-footer span:hover {
+  text-decoration: underline;
+}

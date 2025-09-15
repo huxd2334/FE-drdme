@@ -1,0 +1,172 @@
+/* ============ App ============ */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  background: linear-gradient(180deg, #f8fafc 0%, #e0f2fe 40%, #fdf2f8 100%);
+}
+
+.main {
+  flex: 1;
+  padding: 1.5rem 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.loader {
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 1rem;
+  color: #6b7280;
+}
+
+.footer {
+  padding: 0.75rem 2rem;
+  border-top: 1px solid #e5e7eb;
+  background-color: #fff;
+  color: #6b7280;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+}
+
+:root {
+  --hdr-bg: #fff;
+  --hdr-text: #111827;   /* mặc định đen */
+  --blue: #2563eb;       /* xanh active */
+  --danger: #e11d48;     /* đỏ logout */
+  --danger-hover: #be123c;
+  --border: rgba(0,0,0,0.06);
+  --shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* Header */
+.hdr {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--hdr-bg);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.hdr__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.hdr__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+/* Logo */
+.hdr__brand {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.hdr__logoFull {
+  height: 48px;
+  width: auto;
+}
+
+/* Nav links */
+.hdr__nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* ===== Nav links ===== */
+.hdr__link {
+  position: relative;
+  color: var(--hdr-text);
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.25rem 0;
+  transition: color 0.2s;
+}
+
+/* gạch dưới mặc định ẩn */
+.hdr__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2px;
+  background: var(--blue);
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+/* Hover = chữ xanh + underline */
+.hdr__link:hover {
+  color: var(--blue);
+}
+.hdr__link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Active (click) = chữ xanh + underline */
+.hdr__link--active {
+  color: var(--blue);
+  font-weight: 600;
+}
+.hdr__link--active::after {
+  transform: scaleX(1);
+}
+
+
+/* Greeting */
+.hdr__greet {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+/* Buttons */
+.hdr__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: none;
+  border-radius: 6px;
+  padding: 0.45rem 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.hdr__btn--danger {
+  background: var(--danger);
+  color: #fff;
+}
+.hdr__btn--danger:hover {
+  background: var(--danger-hover);
+}
+.hdr__btnIcon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Mobile toggle hidden on desktop */
+.hdr__mobileToggle {
+  display: none;
+}
+
+@media (max-width: 880px) {
+  .hdr__nav {
+    display: none;
+  }
+  .hdr__mobileToggle {
+    display: inline-flex;
+  }
+}
+

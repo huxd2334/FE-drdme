@@ -1,0 +1,75 @@
+.backdrop {
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modal {
+  animation: slideIn 0.3s ease-out;
+  transform-origin: center;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Focus trap styles */
+.modal:focus {
+  outline: none;
+}
+
+/* Custom scrollbar for modal body */
+.modal .modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modal .modal-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.modal .modal-body::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.modal .modal-body::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .modal {
+    margin: 16px;
+    max-height: calc(100vh - 32px);
+  }
+}
+
+/* Enhanced backdrop blur effect (optional) */
+.backdrop.blur {
+  backdrop-filter: blur(4px);
+}
+
+/* Modal overlay for multiple modals */
+.modal-overlay {
+  z-index: 1000;
+}
+
+.modal-overlay + .modal-overlay {
+  z-index: 1010;
+}

@@ -1,0 +1,73 @@
+/* src/components/common/Button/Button.module.css */
+
+.loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.spinner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Custom hover effects */
+.button-hover-scale:hover {
+  transform: scale(1.02);
+}
+
+.button-hover-shadow:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Custom focus styles for better accessibility */
+.button-focus-visible:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Ripple effect (optional enhancement) */
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+}
+
+.ripple:active::before {
+  width: 200px;
+  height: 200px;
+}
+
+.tb-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  transition: background 0.2s;
+}
+
+.tb-badge--success {
+  background: #c7f0c9;
+  color: #14532d;
+}
+
+.tb-badge--wait {
+  background: #fde68a;
+  color: #92400e;
+}
